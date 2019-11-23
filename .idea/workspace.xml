@@ -13,6 +13,8 @@
   <component name="ChangeListManager">
     <list default="true" id="89d0f724-084e-47f0-9ee4-de101420678e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/arvore-b.c" beforeDir="false" afterPath="$PROJECT_DIR$/arvore-b.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arvore-b.h" beforeDir="false" afterPath="$PROJECT_DIR$/arvore-b.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/EDA.dir/arvore-b.c.obj" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,16 +41,16 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/arvore-b.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="251" column="29" selection-start-line="251" selection-start-column="29" selection-end-line="251" selection-end-column="29" />
+            <state relative-caret-position="388">
+              <caret line="291" column="69" selection-start-line="291" selection-start-column="69" selection-end-line="291" selection-end-column="69" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
                 <element signature="e#40#353#0" />
                 <element signature="e#355#565#0" />
                 <element signature="e#567#1010#0" />
-                <element signature="e#1012#1478#0" />
                 <element signature="e#1481#1519#0" />
                 <element signature="e#1521#1971#0" />
+                <element signature="e#1521#3362#0" />
                 <element signature="e#3364#5986#0" />
               </folding>
             </state>
@@ -58,8 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/arvore-b.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1">
-              <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+            <state relative-caret-position="374">
+              <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -155,12 +157,12 @@
       <option name="presentableId" value="Default" />
       <updated>1574447637159</updated>
       <workItem from="1574447638397" duration="5753000" />
-      <workItem from="1574462312725" duration="7957000" />
+      <workItem from="1574462312725" duration="10766000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13710000" />
+    <option name="totallyTimeSpent" value="16519000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
@@ -235,9 +237,9 @@
             <element signature="e#40#353#0" />
             <element signature="e#355#565#0" />
             <element signature="e#567#1010#0" />
-            <element signature="e#1012#1478#0" />
             <element signature="e#1481#1519#0" />
             <element signature="e#1521#1971#0" />
+            <element signature="e#1521#3362#0" />
             <element signature="e#3364#5986#0" />
           </folding>
         </state>
@@ -273,23 +275,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/arvore-b.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+        <state relative-caret-position="374">
+          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/arvore-b.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="251" column="29" selection-start-line="251" selection-start-column="29" selection-end-line="251" selection-end-column="29" />
+        <state relative-caret-position="388">
+          <caret line="291" column="69" selection-start-line="291" selection-start-column="69" selection-end-line="291" selection-end-column="69" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
             <element signature="e#40#353#0" />
             <element signature="e#355#565#0" />
             <element signature="e#567#1010#0" />
-            <element signature="e#1012#1478#0" />
             <element signature="e#1481#1519#0" />
             <element signature="e#1521#1971#0" />
+            <element signature="e#1521#3362#0" />
             <element signature="e#3364#5986#0" />
           </folding>
         </state>

@@ -13,6 +13,8 @@ stdio.h
 -
 stdlib.h
 -
+ctype.h
+-
 
 E:/Projects/EDA/arvore-b.h
 

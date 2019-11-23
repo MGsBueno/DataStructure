@@ -11,11 +11,11 @@ typedef struct No {
 TNo *cria();
 TNo *libera(TNo *a);
 void imprime(TNo *a, int nivel);
-TNo *busca(TNo *no, char ch);
+TNo *busca(TNo *no, char ch, int frequencia);
 TNo *inicializa();
-TNo *particiona(TNo *raiz, TNo *P, char ch, TNo *pt);
-TNo *insere(TNo *raiz, int folha, char ch, TNo *pt);
-TNo *particiona(TNo *raiz, TNo *P, char ch, TNo *pt);
+TNo *particiona(TNo *raiz, TNo *P, char ch, TNo *pt, int frequencia);
+TNo *insere(TNo *raiz, int folha, char ch, TNo *pt, int frequencia);
+TNo *particiona(TNo *raiz, TNo *P, char ch, TNo *pt, int frequencia);
 
 
 

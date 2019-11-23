@@ -1,6 +1,8 @@
 #include "arvore-b.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
+
 
 //alterei as chaves de int para char no cria()
 TNo *cria() {
@@ -44,9 +46,8 @@ void imprime(TNo *a, int nivel) {
     }
 }
 
-
 //alterei as chaves de int para char no busca
-TNo *busca(TNo *no, char ch) {
+TNo *busca(TNo *no, char ch, int frequencia) {
     if (no != NULL) {
         int i = 0;
         while (i < no->m && ch > no->s[i]) {
@@ -55,11 +56,10 @@ TNo *busca(TNo *no, char ch) {
         if (i < no->m && ch == no->s[i]) {
             return no;
         } else if (no->p[i] != NULL) {
-            return busca(no->p[i], ch);
+            return busca(no->p[i], ch, frequencia);
         } else return no; //nó era folha -- não existem mais nós a buscar, então retorna o nó onde a chave deveria estar
     } else return NULL; //nó é NULL, não há como buscar
 }
-
 
 TNo *inicializa() {
     return NULL;
@@ -73,12 +73,10 @@ TNo *inicializa() {
  * Retorna ponteiro para a raiz da árvore
  */
 
-
-//Insere ordem alfabética
-TNo *insere(TNo *raiz, int folha, char ch, TNo *pt) {
+TNo *insere(TNo *raiz, int folha, char ch, TNo *pt, int frequencia ) {
     TNo *no;
     if (folha) {
-        no = busca(raiz, ch);
+        no = busca(raiz, ch, frequencia);
         if (no != NULL) {
             //chave buscada pode existir dentro do nó retornado
             //verificar se realmente existe
@@ -104,7 +102,7 @@ TNo *insere(TNo *raiz, int folha, char ch, TNo *pt) {
         if (no->m == (2 * d)) {
             //Nó está cheio -- é necessário particionar
             //raiz da árvore pode ter mudado, então captura possível nova raiz
-            raiz = particiona(raiz, no, ch, pt);
+            raiz = particiona(raiz, no, ch, pt, frequencia);
         } else {
             //encontra posição de inserção
             int i = no->m;
@@ -124,13 +122,16 @@ TNo *insere(TNo *raiz, int folha, char ch, TNo *pt) {
     return raiz;
 }
 
+
+
+
 /*
  * Particiona o nó p para adicionar a chave ch e ponteiro pt
  * Após o final da execução dessa função, a chave ch terá sido inserida no local correto
  * e um novo nó q terá sido criado como resultado do particionamento
  */
 
-TNo *particiona(TNo *raiz, TNo *P, char ch, TNo *pt) {
+TNo *particiona(TNo *raiz, TNo *P, char ch, TNo *pt, int frequencia) {
     TNo *Q = cria();
     Q->m = d; //número de chaves na nova página Q é d
     Q->pont_pai = P->pont_pai;
@@ -200,7 +201,7 @@ TNo *particiona(TNo *raiz, TNo *P, char ch, TNo *pt) {
 
     //Insere chave d+1 no pai de P e ponteiro apontando para a nova página Q
 
-    TNo *pai = insere(P->pont_pai, 0, chave_d, pt_chave_d);
+    TNo *pai = insere(P->pont_pai, 0, chave_d, pt_chave_d, frequencia);
     //Se P->pai era NULL, significa que árvore tem uma nova raiz, então é preciso ajustar os ponteiros para o pai de P e Q para apontar para esse novo nó
     if (P->pont_pai == NULL) {
         P->pont_pai = pai;
@@ -218,8 +219,12 @@ int main(int argc, char *argv[]) {
     int num = 0, escolha = 1 ;
     char letra = 'z';
     while (num != -1) {
-        printf("Digite 1 para adicionar chave em ordem alfabetica na Arvore; 2 para  adicionar chave "
-               "em ordem de frequencia na Arvore; 0 para imprimir; -9 para buscar e -1 para sair\n");
+        printf("Digite: \n 1 inserir em Arvore ordenada em ordem alfabetica\n"
+               " 2 inserir em Arvore ordenada por frequencia\n"
+               "-8 para busca por ordem alfabetica\n"
+               "-9 para busca por frequencia\n"
+               " 0 para imprimir\n"
+               " e -1 para sair\n");
         scanf("%i", &num);
 
         //if de saída
@@ -234,31 +239,62 @@ int main(int argc, char *argv[]) {
             printf("\n");
             imprime(raiz, 0);
 
-            //busca
+            //busca ordem alfabética
+        } else if (num == -8) {
+            printf("Digite a chave a ser buscada: ");
+            fflush(stdin);
+            scanf("%c", &letra);
+            TNo *n = busca(raiz, letra, 0);
+            printf("Resultado da busca (lembrando que busca retorna o nó onde a chave deveria estar): \n");
+            imprime(n, -1);
+
+            //busca or frequencia
         } else if (num == -9) {
             printf("Digite a chave a ser buscada: ");
             fflush(stdin);
             scanf("%c", &letra);
-            TNo *n = busca(raiz, letra);
+            TNo *n = busca(raiz, letra, 1);
             printf("Resultado da busca (lembrando que busca retorna o nó onde a chave deveria estar): \n");
             imprime(n, -1);
 
             //insercao
-        } else if (num ==1) {
+        } else if (num == 1) {
             while (escolha != -1) {
-                printf("digite 1 para inserir letra, ou -1 para voltar ao menu anterior: \n" );
+                printf("digite 1 para inserir letra, ou -1 para voltar ao menu anterior: \n");
+                fflush(stdin);
                 scanf("%d", &escolha);
 
-                if (escolha == -1) {
+                if (escolha == 1) {
                     printf("Digite a letra a adicionar a arvore: \n");
 
                     fflush(stdin);
                     letra = getchar();
-                    raiz = insere(raiz, 1, letra, NULL);
+                    if (!isdigit(letra))
+                    raiz = insere(raiz, 1, letra, NULL, 0);
+                    else printf(" caracter invalido tente novamente\n");
                     printf("Resultado da inserçao: \n");
                     imprime(raiz, 0);
                 }
             }
+        }else if(num == 2){
+            while (escolha != -1) {
+                printf("digite 1 para inserir letra, ou -1 para voltar ao menu anterior: \n");
+                fflush(stdin);
+                scanf("%d", &escolha);
+
+                if (escolha == 1 ) {
+                    printf("Digite a letra a adicionar a arvore: \n");
+
+                    fflush(stdin);
+                    letra = getchar();
+                    if (!isdigit(letra))
+                    raiz = insere(raiz, 1, letra, NULL, 1);
+                    else printf(" caracter invalido tente novamente\n");
+                    printf("Resultado da inserçao: \n");
+                    imprime(raiz, 0);
+                }
+            }
+
         }else{
             printf("\n\n");
         }
