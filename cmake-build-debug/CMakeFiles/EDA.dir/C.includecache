@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/Projects/EDA/arvore-b.c
+arvore-b.h
+E:/Projects/EDA/arvore-b.h
+stdio.h
+-
+stdlib.h
+-
+
+E:/Projects/EDA/arvore-b.h
+
