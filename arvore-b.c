@@ -32,7 +32,7 @@ void imprime(TNo *a, int nivel) {
         if (nivel >= 0)
             printf("Nível %d:\n", nivel);
         for (int i = 0; i < a->m; i++) {
-            printf("%5d", a->s[i]);
+            printf("%c", a->s[i]);
         }
         printf("\n");
         //Imprime filhos recursivamente, se a não for folha
@@ -237,6 +237,7 @@ int main(int argc, char *argv[]) {
             //busca
         } else if (num == -9) {
             printf("Digite a chave a ser buscada: ");
+            fflush(stdin);
             scanf("%c", &letra);
             TNo *n = busca(raiz, letra);
             printf("Resultado da busca (lembrando que busca retorna o nó onde a chave deveria estar): \n");
@@ -248,13 +249,11 @@ int main(int argc, char *argv[]) {
                 printf("digite 1 para inserir letra, ou -1 para voltar ao menu anterior: \n" );
                 scanf("%d", &escolha);
 
-                if (escolha != -1) {
+                if (escolha == -1) {
                     printf("Digite a letra a adicionar a arvore: \n");
 
-                    printf(" antes do scan letra:  %c",letra);
-                    scanf("%c", &letra);
-                    printf(" depois do scan letra:  %c",letra);
-
+                    fflush(stdin);
+                    letra = getchar();
                     raiz = insere(raiz, 1, letra, NULL);
                     printf("Resultado da inserçao: \n");
                     imprime(raiz, 0);
