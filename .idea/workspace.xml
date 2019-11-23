@@ -12,9 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89d0f724-084e-47f0-9ee4-de101420678e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/arvore-b.c" beforeDir="false" afterPath="$PROJECT_DIR$/arvore-b.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arvore-b.h" beforeDir="false" afterPath="$PROJECT_DIR$/arvore-b.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/EDA.dir/arvore-b.c.obj" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,7 +36,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/arvore-b.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="388">
@@ -53,6 +51,15 @@
                 <element signature="e#1521#3362#0" />
                 <element signature="e#3364#5986#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1122">
+              <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -84,6 +91,7 @@
         <option value="$PROJECT_DIR$/main.c" />
         <option value="$PROJECT_DIR$/arvore-b.h" />
         <option value="$PROJECT_DIR$/arvore-b.c" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -157,12 +165,12 @@
       <option name="presentableId" value="Default" />
       <updated>1574447637159</updated>
       <workItem from="1574447638397" duration="5753000" />
-      <workItem from="1574462312725" duration="10766000" />
+      <workItem from="1574462312725" duration="11123000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16519000" />
+    <option name="totallyTimeSpent" value="16876000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
@@ -294,6 +302,13 @@
             <element signature="e#1521#3362#0" />
             <element signature="e#3364#5986#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
         </state>
       </provider>
     </entry>
